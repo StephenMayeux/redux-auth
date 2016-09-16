@@ -2,8 +2,13 @@ const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+
 const app = express();
 const router = require('./router');
+const mongoose = require('mongoose');
+
+// DB set up
+mongoose.connect('mongodb://localhost/auth');
 
 // app set up
 app.use(logger('combined'));
