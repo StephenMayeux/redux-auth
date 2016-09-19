@@ -10,7 +10,8 @@ function tokenForUser(user) {
 exports.signin = function(req, res, next) {
   // user had credentials authorized
   // just have to give user a token
-  
+  // req.user is supplied from localLogin in passport.js
+  res.send({ token: tokenForUser(req.user) });
 }
 
 exports.signup = function (req, res, next) {
